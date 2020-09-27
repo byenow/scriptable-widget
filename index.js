@@ -23,7 +23,7 @@ function createWidget() {
     bgColor.locations = [0.0, 0.5, 1.0]
     w.backgroundGradient = bgColor
 
-    w.setPadding(12, 12, 12, 6)
+    w.setPadding(12, 12, 12, 0)
     w.spacing = 6
 
     const time = new Date()
@@ -65,7 +65,7 @@ function createWidget() {
 }
 
 async function getAQI() {
-    const url = `https://api.waqi.info/feed/beijing/?token=${AQIToken}`
+    const url = `https://api.waqi.info/feed/${City}/?token=${AQIToken}`
     const request = new Request(url)
     const res = await request.loadJSON()
     return res.data.aqi
